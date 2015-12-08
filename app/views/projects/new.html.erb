@@ -13,7 +13,16 @@
 		<%= f.label :funding_goal%><br/>
 		<%= f.text_field :funding_goal %>
 	</div>
+	<div class="field">
+		<%= f.label :start_date%><br/>
+		<%= f.datetime_local_field(:start_date) %>
+	</div>
+	<div class="field">
+		<%= f.label :end_date%><br/>
+		<%= f.datetime_local_field(:end_date) %>
+	</div>
 	<div class="actions">
 		<%= f.submit %>
 	</div>
+
 <% end %>
