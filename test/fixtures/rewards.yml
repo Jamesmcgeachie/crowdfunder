@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tier_value: 1
+  description: MyText
+  project_id: 
+
+two:
+  tier_value: 1
+  description: MyText
+  project_id: 
