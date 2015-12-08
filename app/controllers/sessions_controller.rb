@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    byebug
   	if @user = login(params[:email], params[:password])
   		redirect_to :users, notice: 'Login successful'
   	else
@@ -14,7 +13,7 @@ class SessionsController < ApplicationController
 
   def destroy
   	logout
-  	redirect_to root_path, notice: "You logged out of Crowdfunder"
+  	redirect_to users_path, notice: "You logged out of Crowdfunder"
   end
 
 end
