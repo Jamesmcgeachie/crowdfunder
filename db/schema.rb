@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208042017) do
+ActiveRecord::Schema.define(version: 20151208042658) do
+
+  create_table "pledges", force: :cascade do |t|
+    t.integer  "amount"
+    t.integer  "user_id"
+    t.integer  "reward_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "pledges", ["reward_id"], name: "index_pledges_on_reward_id"
+  add_index "pledges", ["user_id"], name: "index_pledges_on_user_id"
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
