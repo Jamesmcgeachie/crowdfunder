@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   before_action :get_user, only: [:show, :edit, :update]
+  before_action :user_authorized?, only: [:show, :edit, :update]
 
   def index
     @users = User.all
@@ -21,7 +22,6 @@ class UsersController < ApplicationController
   end
 
   def show
-
   end
 
   def edit
@@ -43,5 +43,13 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+  end
+
+  def user_authorized?
+    get_user
+    unless current_user == @user
+      flash[:alert] = "We're sorry, that's not your profile. Redirected to your profile page"
+      redirect_to user_path(current_user)
+    end
   end
 end
