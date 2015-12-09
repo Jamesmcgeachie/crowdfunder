@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
 
   def new
   	@project = Project.new
+    @reward = @project.rewards.build
   end
 
   def edit
