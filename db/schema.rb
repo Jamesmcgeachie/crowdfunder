@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151208214547) do
+ActiveRecord::Schema.define(version: 20151209191410) do
 
   create_table "pledges", force: :cascade do |t|
     t.integer  "amount"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20151208214547) do
     t.integer  "project_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "reward_name"
   end
 
   add_index "rewards", ["project_id"], name: "index_rewards_on_project_id"

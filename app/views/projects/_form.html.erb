@@ -19,6 +19,16 @@
 		<%= f.label :end_date%><br/>
 		<%= f.datetime_local_field(:end_date) %>
 	</div>
+	<div class="field">
+		<%= f.fields_for :rewards do |r| %>
+			<%= r.label :reward_name %>
+			<%= r.text_field :reward_name %>
+			<%= r.label :description %>
+			<%= r.text_area :description %>
+			<%= r.label :tier_value %>
+			<%= r.number_field :tier_value %>
+		<% end %>
+	</div>
 	<div class="actions">
 		<%= f.submit %>
 	</div>
