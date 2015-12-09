@@ -52,9 +52,12 @@ ActiveRecord::Schema.define(version: 20151208214547) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "crypted_password"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "salt"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end
