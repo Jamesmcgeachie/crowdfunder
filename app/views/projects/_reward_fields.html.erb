@@ -1,10 +1,9 @@
-<div class="reward-form">
-
-		<%= r.label :reward_name %>
-		<%= r.text_field :reward_name %>
-		<%= r.label :description %>
-		<%= r.text_area :description %>
-		<%= r.label :tier_value %>
-		<%= r.number_field(:tier_value, in: 10.0..200.0, step: 10.0) %>
-
+<div class="nested-fields">
+	<%= f.label :reward_name %>
+	<%= f.text_field :reward_name %><br/>
+	<%= f.label :description %><br/>
+	<%= f.text_area :description %><br/>
+	<%= f.label :tier_value %>
+	<%= f.number_field(:tier_value, in: 10.0..200.0, step: 10.0) %><br/>
+	<%= link_to_remove_association "remove task", f %>	
 </div>
