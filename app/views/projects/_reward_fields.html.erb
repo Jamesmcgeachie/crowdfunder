@@ -1,0 +1,10 @@
+<div class="reward-form">
+
+		<%= r.label :reward_name %>
+		<%= r.text_field :reward_name %>
+		<%= r.label :description %>
+		<%= r.text_area :description %>
+		<%= r.label :tier_value %>
+		<%= r.number_field(:tier_value, in: 10.0..200.0, step: 10.0) %>
+
+</div>

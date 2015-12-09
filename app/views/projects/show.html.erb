@@ -1,9 +1,12 @@
+<%= link_to "Back to Index", "/projects" %> | <%= link_to "Edit", edit_project_path(@project) %>
+
+
 <h1>Project for <%= @project.name %></h1>
 
 <p>
-	<%= @project.name %><br/>
-	<%= @project.description %><br/>
-	<%= @project.funding_goal %><br/>
-	<%= @project.start_date %><br/>
-	<%= @project.end_date %><br/>
+	Name: <%= @project.name %><br/>
+	Description: <%= @project.description %><br/>
+	Funding Goal: <%= @project.funding_goal %><br/>
+	Start Date: <%= @project.start_date %><br/>
+	End Date: <%= @project.end_date %><br/>
 </p>	

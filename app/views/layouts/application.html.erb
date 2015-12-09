@@ -7,7 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="navbar">
+	<% if logged_in? %>
+		<%= link_to 'Profile', user_path(current_user) %>
+		<%= link_to 'Log Out', logout_path, method: 'delete' %>
+	<% else %>
+		<%= link_to 'Sign Up', signup_path %>
+		<%= link_to 'Login', login_path %>
+	<% end %>
+</div>
+<div class="flashes">
+	<% if flash[:alert] %>
+		<%= flash[:alert] %>
+	<% end %>
 <%= yield %>
 
 </body>
