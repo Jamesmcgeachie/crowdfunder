@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'projects#index'
+
   resources :projects
   resources :users, only: [:new, :create, :edit, :update, :show, :index]
   resources :sessions, only: [:new, :create, :destroy]
