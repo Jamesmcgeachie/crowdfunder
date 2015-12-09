@@ -4,11 +4,13 @@ class ProjectsController < ApplicationController
   before_action :project_permission, only: [:edit, :update, :destroy]
   skip_before_action :require_login, only: [:show, :index]
 
+
   def index
   	@projects = Project.all
   end
 
   def show
+
   end
 
   def new
