@@ -29,7 +29,7 @@ class Project < ActiveRecord::Base
 
   def is_funded?
   	unless project_ongoing
-  		self.project_total - self.funding_goal > 0 ? "Project was funded! :)" : "Project was not funded. :("
+  		(self.project_total >= self.funding_goal) ? "Project was funded! :)" : "Project was not funded. :("
   	end
   end
 
