@@ -4,10 +4,6 @@ class UsersController < ApplicationController
   before_action :user_authorized?, only: [:show, :edit, :update]
   skip_before_action :require_login, only: [:new, :create]
 
-  def index
-    @users = User.all
-  end
-
   def new
     @user = User.new
   end
@@ -16,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       auto_login(@user)
-      redirect_to users_path
+      redirect_to projects_path
     else
       render :new
     end
@@ -30,7 +26,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
-      redirect_to users_path
+      redirect_to user_path(@user)
     else
       render :edit
     end

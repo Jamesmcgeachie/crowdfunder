@@ -1,5 +1,7 @@
 <h1>Your Profile Page</h1>
 
+<%= link_to 'Edit your profile', edit_user_path(@user) %>
+
 <p>First Name: <%= @user.first_name %></p>
 <p>Last Name: <%= @user.last_name %></p>
 <p>Email: <%= @user.email %></p>
