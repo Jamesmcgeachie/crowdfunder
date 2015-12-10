@@ -6,6 +6,7 @@ class PledgesController < ApplicationController
     @pledge.user = current_user
     if @pledge.save
       flash[:notice] = "Successfully pledged! Thank you!"
+      @pledge.add_to_total
       redirect_to project_path(@pledge.project)
     else
       flash[:alert] = "Sorry, that pledge didn't go through"

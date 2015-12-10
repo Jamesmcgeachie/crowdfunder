@@ -10,7 +10,6 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @total = @project.project_total
     @time_left = @project.time_left
   end
 
@@ -24,6 +23,7 @@ class ProjectsController < ApplicationController
 
   def create
   	@project = Project.new(project_params)
+    @project.total_raised = 0
     @project.user = current_user
     if @project.save
       redirect_to projects_url

@@ -7,17 +7,6 @@ class Project < ActiveRecord::Base
 
   accepts_nested_attributes_for :rewards, reject_if: :all_blank, allow_destroy: true
 
-  # Is there a more efficient method of doing this?
-  def project_total
-  	total = 0
-  	self.rewards.each do |reward|
-  		reward.pledges.each do |pledge|
-  			total += pledge.amount
-  		end
-  	end
-  	return total
-  end
-
   def time_left
   	if project_ongoing
 	  	days = ((self.end_date - Time.now) / 86400).floor
@@ -30,7 +19,7 @@ class Project < ActiveRecord::Base
 
   def is_funded?
   	unless project_ongoing
-  		(self.project_total >= self.funding_goal) ? "Project was funded! :)" : "Project was not funded. :("
+  		(self.total_raised >= self.funding_goal) ? "Project was funded! :)" : "Project was not funded. :("
   	end
   end
 
