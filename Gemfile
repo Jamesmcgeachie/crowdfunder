@@ -17,6 +17,10 @@ gem 'pry-rails'
 
 # use coccoon gem
 gem 'cocoon'
+# use carrierwave for image uploads.
+gem 'carrierwave'
+# use minimagick
+gem "mini_magick"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

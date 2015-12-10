@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+  mount_uploader :project_image, ImageUploader
   belongs_to :user
   has_many :rewards
 
@@ -29,7 +30,7 @@ class Project < ActiveRecord::Base
 
   def is_funded?
   	unless project_ongoing
-  		self.project_total - self.funding_goal > 0 ? "Project was funded! :)" : "Project was not funded. :("
+  		self.project_total - self.funding_goal >= 0 ? "Project was funded! :)" : "Project was not funded. :("
   	end
   end
 
