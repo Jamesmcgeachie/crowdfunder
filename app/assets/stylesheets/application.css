@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+body {
+	background-color: #67C6C6;
+}
+
+
+#scholar_logo {
+	color: #EB6B44;
+	font-family: 'Pacifico', cursive;
+}

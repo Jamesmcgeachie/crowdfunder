@@ -5,8 +5,12 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 </head>
 <body>
+	<div class="logo">
+		<h1 id="scholar_logo">Scholar Starter</h1>
+	</div>
 	<div class="navbar">
 		<%= link_to 'All Projects', projects_path %>
 		<% if logged_in? %>
