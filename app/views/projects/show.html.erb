@@ -9,4 +9,9 @@
 	Funding Goal: <%= @project.funding_goal %><br/>
 	Start Date: <%= @project.start_date %><br/>
 	End Date: <%= @project.end_date %><br/>
-</p>	
+</p>
+
+<div class="rewards">
+	<%= render partial: 'rewards/reward', collection: @project.rewards.order(tier_value: :asc) %>
+</div>
+

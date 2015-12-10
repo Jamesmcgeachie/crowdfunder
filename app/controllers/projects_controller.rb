@@ -4,11 +4,13 @@ class ProjectsController < ApplicationController
   before_action :project_permission, only: [:edit, :update, :destroy]
   skip_before_action :require_login, only: [:show, :index]
 
+
   def index
   	@projects = Project.all
   end
 
   def show
+
   end
 
   def new
@@ -44,7 +46,7 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :description, :funding_goal, :start_date, :end_date)
+    params.require(:project).permit(:name, :description, :funding_goal, :start_date, :end_date, rewards_attributes: [:tier_value, :reward_name, :description, :id, :_destroy])
   end
 
   def project_permission
