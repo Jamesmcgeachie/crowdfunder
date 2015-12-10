@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20151210200918) do
     t.datetime "end_date"
     t.string   "photo_url"
     t.string   "project_image"
+    t.integer  "total_raised"
   end
 
   add_index "projects", ["user_id"], name: "index_projects_on_user_id"

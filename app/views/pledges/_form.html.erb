@@ -1,5 +1,5 @@
 <div class="pledge">
-	<%= form_for ([reward, Pledge.new]) do |f| %>
+	<%= form_for [reward, Pledge.new], remote: true do |f| %>
 		<%= f.label :amount %>
 		<%= f.select(:amount, value: [[reward.tier_value]]) %>
 		<%= f.submit %>
