@@ -18,8 +18,28 @@ class Project < ActiveRecord::Base
   end
 
   def time_left
-  	days = ((self.end_date - Time.now) / 86400).floor
-  	hours = (((self.end_date - Time.now) / 3600) - (days * 24)).floor
-		return "#{days} days and #{hours} hours"
+  	if project_ongoing
+	  	days = ((self.end_date - Time.now) / 86400).floor
+	  	hours = (((self.end_date - Time.now) / 3600) - (days * 24)).floor
+			return "#{days} days and #{hours} hours"
+		else
+			return "Backing period has ended."
+		end
   end
+
+  def is_funded?
+  	unless project_ongoing
+  		byebug
+  		self.project_total - self.funding_goal > 0 ? "Project was funded! :)" : "Project was not funded. :("
+  	end
+  end
+
+  private
+
+  def project_ongoing
+  	byebug
+  	(self.end_date - Time.now) > 0
+  end
+
+
 end
