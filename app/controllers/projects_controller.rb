@@ -12,6 +12,12 @@ class ProjectsController < ApplicationController
   def show
     @total = @project.project_total
     @time_left = @project.time_left
+
+    @project = Project.find(params[:id])
+
+    if current_user
+      @review = @project.reviews.build
+    end
   end
 
   def new

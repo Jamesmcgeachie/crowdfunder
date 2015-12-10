@@ -2,6 +2,7 @@ class Project < ActiveRecord::Base
   mount_uploader :project_image, ImageUploader
   belongs_to :user
   has_many :rewards
+  has_many :reviews
 
   validates :name, :description, :funding_goal, :start_date, :end_date, presence: true
 

@@ -27,3 +27,34 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+CrowdFunder - MVP Requirements
+
+Iteration 1
+As a Project Owner, I want to be able to create a new project with a title and a description
+As a Project Owner, I want to set a goal for my project
+As a Project Owner, I want to set a funding period (start date, finish date) for my project
+As a Project Owner, I want the ability to set funding rewards with a description of what backers will receive for each reward
+As a Backer, I want to be able to back a project at a certain reward
+should be able to click on a reward and have it submitted with no page refresh (AJAX)
+once submitted, upon success, the amount raised should update
+
+Iteration 2
+As a Backer, When viewing a project, it should be very clear whether I have backed the project or not
+As a Project Owner, I want to see the total amount of money raised as of right now
+As a Backer, I want to see all of the projects that I have backed
+As a Backer, I want to see the total amount of money I have spent on projects
+
+Iteration 3
+As a Project Owner, To help people find my project, I want the ability to add it to a category
+As a Backer, I want to be able to see all projects in a particular category
+As a Backer, I want to see who the owner of a project is
+
+Iteration 4
+As a Backer, I want to be able to leave comments on a project
+The comment should be submitted via AJAX
+
+Iteration 5
+As a Project Owner, I want to see how many people have funded my project at each reward
+As a user, I would like to see how much money has been raised in total
+As a Project Owner, I want the ability to add updates my project

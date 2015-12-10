@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :rewards do
     resources :pledges
   end
-  resources :projects
+  resources :projects do
+    resources :reviews, only: [:show, :create, :destroy]
+  end 
   resources :users, only: [:new, :create, :edit, :update, :show]
   resources :sessions, only: [:new, :create, :destroy]
 
