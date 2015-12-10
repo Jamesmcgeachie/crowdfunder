@@ -19,7 +19,7 @@
 <% if @user.pledges.any? %>
 	<% @user.pledges.each do |pledge| %>
 <!-- 		James note - want to refactor this project name to not break law of demeter -->
-		<p>Project name: <%= pledge.reward.project.name %>
+		<p>Project name: <%= pledge.project.name %>
 		| Reward: <%= pledge.reward.reward_name %>
 		| Pledge: $<%= pledge.amount %></p>
 	<% end %>

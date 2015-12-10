@@ -1,0 +1,8 @@
+<div class="review">
+	<%= review.comment %>
+	<br>
+	<% if review.user != nil %>
+		<em> by <%= review.user.first_name %> <%= review.user.last_name %></em>
+		Added on: <%= review.created_at %>
+	<% end %>
+</div>

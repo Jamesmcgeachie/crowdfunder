@@ -1,0 +1,7 @@
+<% if @review.errors.present? %>
+	$('#review-errors').html("<%=j (render(:partial => '/reviews/review_form_errors')) %>");
+<% else %>
+	$('#review-errors').html("");
+	$('#review-list').html("<%=j (render(partial: 'reviews/review', collection: @project.reviews.order(created_at: :desc))) %>");
+	$('#new_review')[0].reset();
+<% end %>

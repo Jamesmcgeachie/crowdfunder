@@ -8,11 +8,16 @@ class ReviewsController < ApplicationController
   def create
   	@review = @project.reviews.build(review_params)
   	@review.user = current_user
-  	if @review.save
-  		redirect_to projects_path, notice: 'Review created successfully'
-  	else
-  		render 'project/show'
-  	end 
+  	
+    respond_to do |format|
+      if @review.save
+        format.html { redirect_to project_path(@project), notice: 'Review added.'}
+        format.js {}
+      else
+        format.html { render 'projects/show', alert: 'There was an error.'}
+        format.js {}
+      end
+    end
   end
 
   def destroy
