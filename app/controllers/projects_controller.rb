@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @total = @project.project_total
   end
 
   def new

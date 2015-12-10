@@ -11,6 +11,8 @@
 	End Date: <%= @project.end_date %><br/>
 </p>
 
+<h2>Total Raised to date: $<%= @total %></h2>
+
 <div class="rewards">
 	<h2>Rewards for backing</h2>
 	<%= render partial: 'rewards/reward', collection: @project.rewards.order(tier_value: :asc) %>
