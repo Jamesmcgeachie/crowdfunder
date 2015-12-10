@@ -17,4 +17,9 @@ class Project < ActiveRecord::Base
   	return total
   end
 
+  def time_left
+  	days = ((self.end_date - Time.now) / 86400).floor
+  	hours = (((self.end_date - Time.now) / 3600) - (days * 24)).floor
+		return "#{days} days and #{hours} hours"
+  end
 end

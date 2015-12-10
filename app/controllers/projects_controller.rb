@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
 
   def show
     @total = @project.project_total
+    @time_left = @project.time_left
   end
 
   def new
