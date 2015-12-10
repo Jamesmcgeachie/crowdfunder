@@ -7,8 +7,9 @@ class PledgesController < ApplicationController
     @pledge = @reward.pledges.build(pledge_params)
     @pledge.user = current_user
     if @pledge.save
-      redirect_to projects_path(@pledge.project)
+      redirect_to project_path(@pledge.project)
     else
+      render project_path(@pledge.project)
     end
   end
 
@@ -27,11 +28,15 @@ class PledgesController < ApplicationController
 
   def edit
   end
-private
+
+  private
+
   def pledge_params
     params.require(:pledge).permit(:amount)
   end
+
   def get_reward
     @reward = Reward.find(params[:reward_id])
   end
+
 end
