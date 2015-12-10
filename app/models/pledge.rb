@@ -12,6 +12,7 @@ class Pledge < ActiveRecord::Base
   end
 
   def add_to_total
-  	self.reward.project.total_raised += self.amount
+  	self.project.total_raised += self.amount
+    byebug
   end
 end
