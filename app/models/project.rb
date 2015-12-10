@@ -29,7 +29,6 @@ class Project < ActiveRecord::Base
 
   def is_funded?
   	unless project_ongoing
-  		byebug
   		self.project_total - self.funding_goal > 0 ? "Project was funded! :)" : "Project was not funded. :("
   	end
   end
@@ -37,7 +36,6 @@ class Project < ActiveRecord::Base
   private
 
   def project_ongoing
-  	byebug
   	(self.end_date - Time.now) > 0
   end
 
