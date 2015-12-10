@@ -20,6 +20,10 @@
 		<%= f.datetime_local_field(:end_date) %>
 	</div>
 	<div class="field">
+		<%= f.label :project_image %><br/>
+		<%= f.file_field :project_image %>
+		<%= f.hidden_field :project_image_cache %>
+	<div class="field">
 		<%= link_to_add_association "Add new reward", f, :rewards %>
 		<%= f.fields_for :rewards do |reward| %>
 			<%= render 'reward_fields', :f => reward %>

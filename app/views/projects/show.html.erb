@@ -5,6 +5,7 @@
 
 <p>
 	Name: <%= @project.name %><br/>
+	<%= image_tag @project.project_image_url(:thumb) if @project.project_image %><br/>
 	Description: <%= @project.description %><br/>
 	Funding Goal: <%= @project.funding_goal %><br/>
 	Start Date: <%= @project.start_date %><br/>

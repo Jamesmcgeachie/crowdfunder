@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+  mount_uploader :project_image, ImageUploader
   belongs_to :user
   has_many :rewards
 
