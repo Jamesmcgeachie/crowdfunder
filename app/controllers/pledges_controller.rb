@@ -1,24 +1,18 @@
 class PledgesController < ApplicationController
-  def new
-  end
 
   def create
     get_reward
     @pledge = @reward.pledges.build(pledge_params)
     @pledge.user = current_user
     if @pledge.save
+      flash[:notice] = "Successfully pledged! Thank you!"
       redirect_to project_path(@pledge.project)
     else
-      render project_path(@pledge.project)
+      flash[:alert] = "Sorry, that pledge didn't go through"
+      redirect_to project_path(@pledge.project)
     end
   end
 
-  def index
-  end
-
-  def show
-
-  end
 
   def update
   end

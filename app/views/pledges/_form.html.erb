@@ -1,7 +1,7 @@
 <div class="pledge">
 	<%= form_for ([reward, Pledge.new]) do |f| %>
 		<%= f.label :amount %>
-		<%= f.number_field(:amount, value: reward.tier_value) %>
+		<%= f.select(:amount, value: [[reward.tier_value]]) %>
 		<%= f.submit %>
 	<% end %>
 </div>

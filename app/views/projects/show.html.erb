@@ -1,7 +1,7 @@
 <%= link_to "Back to Index", "/projects" %> | <%= link_to "Edit", edit_project_path(@project) %>
 
 
-<h1>Project for <%= @project.name %></h1>
+<h1><%= @project.name %></h1>
 
 <p>
 	Name: <%= @project.name %><br/>
@@ -12,6 +12,7 @@
 </p>
 
 <div class="rewards">
+	<h2>Rewards for backing</h2>
 	<%= render partial: 'rewards/reward', collection: @project.rewards.order(tier_value: :asc) %>
 </div>
 

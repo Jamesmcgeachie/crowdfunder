@@ -18,7 +18,9 @@
 <h2>Your Pledges</h2>
 <% if @user.pledges.any? %>
 	<% @user.pledges.each do |pledge| %>
-		<p>Reward: <%= pledge.reward.reward_name %>
-		| Pledge: <%= pledge.amount %></p>
+<!-- 		James note - want to refactor this project name to not break law of demeter -->
+		<p>Project name: <%= pledge.reward.project.name %>
+		| Reward: <%= pledge.reward.reward_name %>
+		| Pledge: $<%= pledge.amount %></p>
 	<% end %>
 <% end %>
