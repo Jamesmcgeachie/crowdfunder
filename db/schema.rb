@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151210160321) do
+ActiveRecord::Schema.define(version: 20151210171802) do
 
   create_table "pledges", force: :cascade do |t|
     t.integer  "amount"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20151210160321) do
     t.datetime "end_date"
     t.string   "photo_url"
     t.string   "project_image"
+    t.integer  "total_raised"
   end
 
   add_index "projects", ["user_id"], name: "index_projects_on_user_id"
