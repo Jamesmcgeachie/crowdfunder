@@ -20,8 +20,8 @@
 		<%= f.datetime_local_field(:end_date) %>
 	</div>
 	<div class="field">
+		<%= link_to_add_association "Add new reward", f, :rewards %>
 		<%= f.fields_for :rewards do |reward| %>
-			<%= link_to_add_association "Add new reward", f, :rewards %>
 			<%= render 'reward_fields', :f => reward %>
 		<% end %>
 	</div>
