@@ -3,3 +3,20 @@
 <p>First Name: <%= @user.first_name %></p>
 <p>Last Name: <%= @user.last_name %></p>
 <p>Email: <%= @user.email %></p>
+
+<h2>Your Projects</h2>
+<% if @user.projects.any? %>
+	<% @user.projects.each do |project| %>
+		<p>
+			<a href='/projects/<%= project.id %>' ><%= project.name %></a>
+		</p>
+	<% end %>
+<% end %>
+
+<h2>Your Pledges</h2>
+<% if @user.pledges.any? %>
+	<% @user.pledges.each do |pledge| %>
+		<p>Reward: <%= pledge.reward.reward_name %>
+		| Pledge: <%= pledge.amount %></p>
+	<% end %>
+<% end %>
