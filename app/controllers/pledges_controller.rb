@@ -12,8 +12,8 @@ class PledgesController < ApplicationController
         format.html {redirect_to project_path(@pledge.project), notice: "Successfully pledged! Thank you!"}
         format.js {}
       else
-        flash[:alert] = "Sorry, that pledge didn't go through"
-        redirect_to project_path(@pledge.project)
+        format.html{ redirect_to project_path(@pledge.project), alert: "Sorry, that pledge didn't go through"}
+        format.js {}
       end
     end
   end
