@@ -4,13 +4,17 @@ class PledgesController < ApplicationController
     get_reward
     @pledge = @reward.pledges.build(pledge_params)
     @pledge.user = current_user
-    if @pledge.save
-      flash[:notice] = "Successfully pledged! Thank you!"
-      @pledge.add_to_total
-      redirect_to project_path(@pledge.project)
-    else
-      flash[:alert] = "Sorry, that pledge didn't go through"
-      redirect_to project_path(@pledge.project)
+
+
+    respond_to do |format|
+      if @pledge.save
+        @pledge.add_to_total
+        format.html {redirect_to project_path(@pledge.project), notice: "Successfully pledged! Thank you!"}
+        format.js {}
+      else
+        flash[:alert] = "Sorry, that pledge didn't go through"
+        redirect_to project_path(@pledge.project)
+      end
     end
   end
 
