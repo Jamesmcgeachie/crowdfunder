@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
   	logout
-  	redirect_to users_path, notice: "You logged out of Crowdfunder"
+  	redirect_to root_path, notice: "You logged out of Crowdfunder"
   end
 
 end
