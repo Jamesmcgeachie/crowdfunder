@@ -10,15 +10,36 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+ // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
 body {
-	background-color: #67C6C6;
+	background-color: #FDFCFD;
 }
 
+.content {
+	padding-top: 20%;
+	text-align: center;
+}
+
+.navbar {
+	background-color: #F57173;
+}
+
+.navbar-menu {
+	text-align: right;
+	float: right;
+	padding-top: 3%;
+	padding-right: 3%;
+}
 
 #scholar_logo {
-	color: #EB6B44;
+	color: #5A5EE7;
 	font-family: 'Pacifico', cursive;
+	float: left;
+	text-align: center;
 }
