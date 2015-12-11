@@ -1,2 +1,2 @@
 $('#total-raised').html("Total Raised to date: $<%= @pledge.project.total_raised %>");
-
+$('#user-reward-total').html('<%= number_to_currency(current_user.total_pledged(@pledge.project)) %>');
