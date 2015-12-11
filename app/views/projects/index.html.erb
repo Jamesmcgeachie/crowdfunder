@@ -1,6 +1,7 @@
 <%= link_to "Make a New Project", "/projects/new" %>
 
 <% @projects.each do |project| %>
-	<p><%= link_to "#{project.name}", "/projects/#{project.id}" %>, <%= project.description %>, <%= project.funding_goal %>, <%= project.start_date %>, <%= project.end_date %> 
+	<p><%= link_to "#{project.name}", "/projects/#{project.id}" %>, <%= project.description %>, <%= project.funding_goal %>, <%= project.start_date %>, <%= project.end_date %>,
+		<%= image_tag project.project_image_url(:tiny) if project.project_image %><br/>
 	</p>
 <% end %>
