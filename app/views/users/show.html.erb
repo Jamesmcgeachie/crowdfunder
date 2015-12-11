@@ -33,7 +33,7 @@
 <div class="show-right">
 	<h2> Your Project Trophy </h2><br/>
 		<h3> Number of Project Backed </h3>
-			<p> <%= @user.projects.count %> </p>
+			<p> <%= @user.backed_projects.count %> </p>
 		<h3> Total Amount Backed </h3>
 			<p> <%= number_to_currency(@user.pledges.sum(:amount)) %> </p>
 </div>
