@@ -6,6 +6,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -16,6 +17,9 @@
 		<% if logged_in? %>
 			<%= link_to 'Profile', user_path(current_user) %>
 			<%= link_to 'Log Out', logout_path, method: 'delete' %>
+			<div id="new_project">
+				<%= link_to "Create a Project", "/projects/new" %>
+			</div>
 		<% else %>
 			<%= link_to 'Sign Up', signup_path %>
 			<%= link_to 'Login', login_path %>

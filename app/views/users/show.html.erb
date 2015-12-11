@@ -1,31 +1,30 @@
-<h1>Your Profile Page</h1>
+<div class="user-profile">
+	<h1>Your Profile Page</h1>
 
-<%= link_to 'Edit your profile', edit_user_path(@user) %>
+	<%= link_to 'Edit your profile', edit_user_path(@user) %>
 
-<p>First Name: <%= @user.first_name %></p>
-<p>Last Name: <%= @user.last_name %></p>
-<p>Email: <%= @user.email %></p>
+	<p>First Name: <%= @user.first_name %></p>
+	<p>Last Name: <%= @user.last_name %></p>
+	<p>Email: <%= @user.email %></p>
 
-<h2>Your Projects</h2>
-<% if @user.projects.any? %>
-	<% @user.projects.each do |project| %>
-		<p>
-			<a href='/projects/<%= project.id %>' ><%= project.name %></a>
-		</p>
+	<h2>Your Projects</h2>
+	<% if @user.projects.any? %>
+		<% @user.projects.each do |project| %>
+			<p>
+				<a href='/projects/<%= project.id %>' ><%= project.name %></a>
+			</p>
+		<% end %>
 	<% end %>
-<% end %>
 
-<h2>Backed Projects</h2>
-<% if @user.backed_projects.any? %>
-	<% @user.backed_projects.uniq.each do |project| %>
-		<h3><%= project.name %></h3>
-		<p>Pledges: </p>
-		<ul>
-			<% project.pledges.each do |pledge| %>
-				<li><%= pledge.reward.reward_name %> | <%= pledge.amount %></li>
-			<% end %>
-		</ul>
+	<h2>Backed Projects</h2>
+	<% if @user.backed_projects.any? %>
+		<% @user.backed_projects.uniq.each do |project| %>
+			<h3><%= project.name %></h3>
+			<p>Pledges: </p>
+				<% project.pledges.each do |pledge| %>
+					<p><%= pledge.reward.reward_name %> $<%= pledge.amount %></p>
+				<% end %>
+		<% end %>
 	<% end %>
-<% end %>
-
+</div>
 

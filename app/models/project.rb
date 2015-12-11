@@ -13,7 +13,7 @@ class Project < ActiveRecord::Base
   	if project_ongoing
 	  	days = ((self.end_date - Time.now) / 86400).floor
 	  	hours = (((self.end_date - Time.now) / 3600) - (days * 24)).floor
-			return "#{days} days and #{hours} hours"
+			return "#{days} days"
 		else
 			return "Backing period has ended."
 		end

@@ -16,18 +16,38 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
 body {
 	background-color: #FDFCFD;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.project{
+	float: left;
+	width: 30%;
+	padding: 5% 2% 5% 2%;
+	border: 1px solid #D2D3E3;
+	margin: 1.5%;
+}
+
+.projects{
+	width: 100%;
+	margin: auto;
+	text-align: center;
+}
+
+.project-img{
+	padding-bottom: 5%;
 }
 
 .content {
-	text-align: center;
-	margin-top: 100px;
+	margin-top: 12rem;
+	color: #4E4E4A;
+	padding: 3%;
 }
 
 .navbar {
 	background-color: #F57173;
+	padding: 1%;
 }
 
 .navbar-menu {
@@ -38,8 +58,16 @@ body {
 
 }
 
+.user-profile {
+	padding: 3%;
+}
+
+.new-project{
+	padding: 3%;
+}
+
 #scholar_logo {
-	color: #5A5EE7;
+	font-color: #5A5EE7;
 	font-family: 'Pacifico', cursive;
 	float: left;
 	text-align: center;
@@ -47,4 +75,13 @@ body {
 	a {
 		text-decoration: none;
 	}
+}
+
+#right-menu{
+	color: #D2D3E3;
+}
+
+#new_project {
+
+
 }
