@@ -22,8 +22,8 @@
 			<% @user.backed_projects.uniq.each do |project| %>
 				<h3><%= project.name %></h3>
 				<p>Pledges: </p>
-					<% project.pledges.each do |pledge| %>
-						<p><%= pledge.reward.reward_name %> $<%= pledge.amount %></p>
+					<% project.pledges.where(user_id: @user).each do |f| %>
+						<p><%= f.reward.reward_name %> $<%= f.amount %></p>
 					<% end %>
 			<% end %>
 		<% end %>
