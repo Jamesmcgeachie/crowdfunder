@@ -5,7 +5,6 @@ class PledgesController < ApplicationController
     @pledge = @reward.pledges.build(pledge_params)
     @pledge.user = current_user
 
-
     respond_to do |format|
       if @pledge.save
         format.html {redirect_to project_path(@pledge.project), notice: "Successfully pledged! Thank you!"}
