@@ -4,24 +4,26 @@
 	<% if current_user == @project.user %>
 		<%= link_to "Edit your Project", edit_project_path(@project) %>
 	<% end %>
-	<p>
-		Name: <%= @project.name %><br/>
+	<div class="project-info">
 		<%= image_tag @project.project_image_url(:thumb) if @project.project_image %><br/>
-		Description: <%= @project.description %><br/>
-		Funding Goal: <%= @project.funding_goal %><br/>
-		Start Date: <%= @project.start_date %><br/>
-		End Date: <%= @project.end_date %><br/>
-	</p>
+		<h2> Description </h2>
+		<p> <%= @project.description %> </p>
+		<h2> Funding Goal </h2>
+		<p> $ <%= @project.funding_goal %> </p>
+		<h2> Start Date </h2>
+		<p> <%= @project.start_date %> </p>
+		<h2> End Date </h2>
+		<p> <%= @project.end_date %> </p>
+	</div>
 
 	<h2 id="total-raised">Total Raised to date: $<%= @project.total_raised %></h2>
 	<p>Time left: <%= @time_left %></p>
 
 	<h3>Comments</h3>
-
-	<p>Comments for <%= @project.name %></p>
-
 	<% if logged_in? %>
-		<h4>New Comment</h4>
+		<div id="review-list">
+			<%= render @project.reviews %>
+		</div>
 		<div id="review-form">
 			<%= render partial: 'reviews/form' %>
 		</div>
@@ -29,9 +31,6 @@
 		<p>Please <%= link_to "log in", login_path %> to add a review.</p>
 	<% end %>
 
-	<div id="review-list">
-		<%= render @project.reviews %>
-	</div>
 </div>
 
 <div class="show-right">

@@ -3,8 +3,7 @@
 		<%= render partial: "reviews/review_form_errors", locals: {review: @review} %>
 	</div>
 	<div class="field">
-		<%= f.label :comment %><br>
-		<%= f.text_area :comment %>
+		<p> <%= f.text_area :comment %> </p>
 	</div>
 	<div class="actions">
 		<%= f.submit('Create Comment') %>
