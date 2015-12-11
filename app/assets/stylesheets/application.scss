@@ -13,6 +13,7 @@
  */
 
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -82,6 +83,42 @@ body {
 }
 
 #new_project {
-
-
 }
+
+.labels {
+	float: left;
+}
+
+.inputs {
+	float: left;
+	padding-left: 3%;
+}
+
+.submit {
+	clear: both;
+}
+
+.flashes {
+	text-align: center;
+}
+
+.show-left {
+	float: left;
+	width: 60%;
+	padding: 0% 1% 0% 1%;
+}
+
+.show-right {
+	float: left;
+	width: 35%;
+	padding: 2%;
+	border: 2px solid pink;
+}
+
+#funded {
+	font-size: 26px;
+	color: blue;
+	font-weight: bold;
+}
+
+

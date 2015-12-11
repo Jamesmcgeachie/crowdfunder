@@ -26,14 +26,14 @@
 		<% end %>
 	</div>
 </div>
-	<div class="flashes">
-		<% if flash[:alert] %>
-			<%= flash[:alert] %>
-		<% elsif flash[:notice] %>
-			<%= flash[:notice] %>
-		<% end %>
-	</div>
 	<div class="content">
+		<div class="flashes">
+			<% if flash[:alert] %>
+				<%= flash[:alert] %>
+			<% elsif flash[:notice] %>
+				<%= flash[:notice] %>
+			<% end %>
+		</div>
 		<%= yield %>
 	</div>
 </body>

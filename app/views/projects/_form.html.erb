@@ -1,35 +1,38 @@
 <%= form_for(@project) do |f| %>
-	<div class="field">
-		<%= f.label :name %><br/>
-		<%= f.text_field :name %>
+	<div>
+		<div class="field">
+			<%= f.label :name %><br/>
+			<%= f.text_field :name %>
+		</div>
+		<div class="field">
+			<%= f.label :description %><br/>
+			<%= f.text_area :description %>
+		</div>
+		<div class="field">
+			<%= f.label :funding_goal%><br/>
+			<%= f.text_field :funding_goal %>
+		</div>
+		<div class="field">
+			<%= f.label :start_date%><br/>
+			<%= f.datetime_local_field(:start_date) %>
+		</div>
+		<div class="field">
+			<%= f.label :end_date%><br/>
+			<%= f.datetime_local_field(:end_date) %>
+		</div>
+		<div class="field">
+			<%= f.label :project_image %><br/>
+			<%= f.file_field :project_image %>
+			<%= f.hidden_field :project_image_cache %>
+		</div>
 	</div>
-	<div class="field">
-		<%= f.label :description %><br/>
-		<%= f.text_area :description %>
-	</div>
-	<div class="field">
-		<%= f.label :funding_goal%><br/>
-		<%= f.text_field :funding_goal %>
-	</div>
-	<div class="field">
-		<%= f.label :start_date%><br/>
-		<%= f.datetime_local_field(:start_date) %>
-	</div>
-	<div class="field">
-		<%= f.label :end_date%><br/>
-		<%= f.datetime_local_field(:end_date) %>
-	</div>
-	<div class="field">
-		<%= f.label :project_image %><br/>
-		<%= f.file_field :project_image %>
-		<%= f.hidden_field :project_image_cache %>
-	<div class="field">
+	<div class="fields-for">
 		<%= link_to_add_association "Add new reward", f, :rewards %>
 		<%= f.fields_for :rewards do |reward| %>
 			<%= render 'reward_fields', :f => reward %>
 		<% end %>
 	</div>
-	<div class="actions">
+	<div class="submit">
 		<%= f.submit %>
 	</div>
 <% end %>

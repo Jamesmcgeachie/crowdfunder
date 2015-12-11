@@ -1,12 +1,12 @@
 <%= form_for [@project, @review], :remote => true do |f| %>
 	<div id="review-errors">
 		<%= render partial: "reviews/review_form_errors", locals: {review: @review} %>
-	</div>	
+	</div>
 	<div class="field">
 		<%= f.label :comment %><br>
 		<%= f.text_area :comment %>
 	</div>
 	<div class="actions">
-		<%= f.submit %>
+		<%= f.submit('Create Comment') %>
 	</div>
 <% end %>
