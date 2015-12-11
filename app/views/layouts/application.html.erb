@@ -10,10 +10,9 @@
 <body>
 <div class="navbar navbar-fixed-top">
 	<div class="logo">
-		<h1 id="scholar_logo">Scholar Starter</h1>
+		<h1 id="scholar_logo"> <%= link_to 'Scholar Starter', projects_path %></h1>
 	</div>
 	<div class="navbar-menu">
-		<%= link_to 'Home', projects_path %>
 		<% if logged_in? %>
 			<%= link_to 'Profile', user_path(current_user) %>
 			<%= link_to 'Log Out', logout_path, method: 'delete' %>
