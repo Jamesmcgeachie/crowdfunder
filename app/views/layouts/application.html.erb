@@ -8,11 +8,12 @@
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<div class="navbar navbar-fixed-top">
 	<div class="logo">
 		<h1 id="scholar_logo">Scholar Starter</h1>
 	</div>
-	<div class="navbar">
-		<%= link_to 'All Projects', projects_path %>
+	<div class="navbar-menu">
+		<%= link_to 'Home', projects_path %>
 		<% if logged_in? %>
 			<%= link_to 'Profile', user_path(current_user) %>
 			<%= link_to 'Log Out', logout_path, method: 'delete' %>
@@ -21,6 +22,7 @@
 			<%= link_to 'Login', login_path %>
 		<% end %>
 	</div>
+</div>
 	<div class="flashes">
 		<% if flash[:alert] %>
 			<%= flash[:alert] %>
@@ -28,7 +30,7 @@
 			<%= flash[:notice] %>
 		<% end %>
 	</div>
-	<div>
+	<div class="content">
 		<%= yield %>
 	</div>
 </body>
