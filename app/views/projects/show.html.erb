@@ -3,7 +3,10 @@
 	<h1><%= @project.name %></h1>
 	<% if current_user == @project.user %>
 		<%= link_to "Edit your Project", edit_project_path(@project) %>
+	<% else %>
+		<p>Project owned by: <%= @project.user.first_name %> <%= @project.user.last_name %></p>
 	<% end %>
+
 	<div class="project-info">
 		<%= image_tag @project.project_image_url(:thumb) if @project.project_image %><br/>
 		<h2> Description </h2>
