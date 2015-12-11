@@ -8,7 +8,6 @@ class PledgesController < ApplicationController
 
     respond_to do |format|
       if @pledge.save
-        @pledge.add_to_total
         format.html {redirect_to project_path(@pledge.project), notice: "Successfully pledged! Thank you!"}
         format.js {}
       else

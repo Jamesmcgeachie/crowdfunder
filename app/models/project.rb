@@ -9,6 +9,10 @@ class Project < ActiveRecord::Base
 
   accepts_nested_attributes_for :rewards, reject_if: :all_blank, allow_destroy: true
 
+  def total_raised
+    self.pledges.sum :amount
+  end
+
   def time_left
   	if project_ongoing
 	  	days = ((self.end_date - Time.now) / 86400).floor

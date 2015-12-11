@@ -10,10 +10,4 @@ class Pledge < ActiveRecord::Base
   		errors.add(:amount, "Pledge amount must match reward tier value")
   	end
   end
-
-  def add_to_total
-    this_project = self.project
-  	this_project.total_raised += self.amount
-    this_project.save
-  end
 end
