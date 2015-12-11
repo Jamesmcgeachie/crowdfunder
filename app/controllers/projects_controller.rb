@@ -13,11 +13,10 @@ class ProjectsController < ApplicationController
     @time_left = @project.time_left
     @user = current_user
     @project = Project.find(params[:id])
-    
-    @project_rewards = @user.rewards.where(project: @project)
 
     if current_user
       @review = @project.reviews.build
+      @project_rewards = @user.rewards.where(project: @project)
     end
   end
 

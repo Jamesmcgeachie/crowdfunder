@@ -36,16 +36,16 @@
 
 </div>
 
-<div class="show-right">
-	<div class="reward_total">
-		<h3>Your pledged amount for this project</h3>
-		<p><%= number_to_currency(@user.pledges.where(reward: @project_rewards).sum(:amount)) %>
+<% if current_user %>
+	<div class="show-right">
+		<div class="reward_total">
+			<h3>Your pledged amount for this project</h3>
+			<p><%= number_to_currency(@user.pledges.where(reward: @project_rewards).sum(:amount)) %></p>
+		</div>
+
+		<div class="rewards">
+			<h2>Rewards</h2>
+			<%= render partial: 'rewards/reward', collection: @project.rewards.order(tier_value: :asc) %>
+		</div>
 	</div>
-
-	<div class="rewards">
-		<h2>Rewards</h2>
-		<%= render partial: 'rewards/reward', collection: @project.rewards.order(tier_value: :asc) %>
-	</div>
-</div>
-
-
+<% end %>
