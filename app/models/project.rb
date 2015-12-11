@@ -3,6 +3,7 @@ class Project < ActiveRecord::Base
   belongs_to :user
   has_many :rewards
   has_many :reviews
+  has_many :pledges, through: :rewards
 
   validates :name, :description, :funding_goal, :start_date, :end_date, presence: true
 

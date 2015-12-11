@@ -15,12 +15,17 @@
 	<% end %>
 <% end %>
 
-<h2>Your Pledges</h2>
-<% if @user.pledges.any? %>
-	<% @user.pledges.each do |pledge| %>
-<!-- 		James note - want to refactor this project name to not break law of demeter -->
-		<p>Project name: <%= pledge.project.name %>
-		| Reward: <%= pledge.reward.reward_name %>
-		| Pledge: $<%= pledge.amount %></p>
+<h2>Backed Projects</h2>
+<% if @user.backed_projects.any? %>
+	<% @user.backed_projects.uniq.each do |project| %>
+		<h3><%= project.name %></h3>
+		<p>Pledges: </p>
+		<ul>
+			<% project.pledges.each do |pledge| %>
+				<li><%= pledge.reward.reward_name %> | <%= pledge.amount %></li>
+			<% end %>
+		</ul>
 	<% end %>
 <% end %>
+
+
