@@ -14,26 +14,26 @@
 				<p>
 					<a href='/projects/<%= project.id %>' ><%= project.name %></a> | <%= number_to_currency(project.total_raised) %>
 				</p>
-			<% end %> 
+			<% end %>
 		<% end %>
 
 		<h2>Backed Projects</h2>
 		<% if @user.backed_projects.any? %>
 			<% @user.backed_projects.uniq.each do |project| %>
-				<h3><%= project.name %></h3>
-				<p>Pledges: </p>
-					<% project.pledges.where(user_id: @user).each do |f| %>
-						<p><%= f.reward.reward_name %> $<%= f.amount %></p>
-					<% end %>
+				<p><%= link_to project.name, project_path(project) %></p>
+			<% end %>
+			<h2>Rewards Earned</h2>
+			<% @user.rewards.uniq.each do |reward| %>
+				<p><%= reward.reward_name %> $<%= reward.tier_value %></p>
 			<% end %>
 		<% end %>
 	</div>
 </div>
 
 <div class="show-right">
-	<h2> Your Project Trophy </h2><br/>
-		<h3> Number of Project Backed </h3>
-			<p> <%= @user.backed_projects.count %> </p>
-		<h3> Total Amount Backed </h3>
-			<p> <%= number_to_currency(@user.pledges.sum(:amount)) %> </p>
+	<h2> Your Backer Trophy </h2><br/>
+	<h3> Number of Project Backed </h3>
+	<p> <%= @user.backed_projects.uniq.count %> </p>
+	<h3> Total Amount Backed </h3>
+	<p> <%= number_to_currency(@user.pledges.sum(:amount)) %> </p>
 </div>
