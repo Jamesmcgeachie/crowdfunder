@@ -29,11 +29,13 @@ class Project < ActiveRecord::Base
   	end
   end
 
+  def percentage_funded
+    (self.total_raised.to_f / self.funding_goal.to_f) * 100
+  end
+
   private
 
   def project_ongoing
   	(self.end_date - Time.now) > 0
   end
-
-
 end

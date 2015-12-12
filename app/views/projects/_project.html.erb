@@ -1,5 +1,12 @@
-<p>
-	<%= project.name %><br/>
-	<%= project.description %><br/>
-	<%= project.funding_goal %><br/>
-</p>
+<div class="project">
+	<p><%= image_tag project.project_image_url(:tiny), class: "project-img" if project.project_image %></p>
+	<h2><%= link_to "#{project.name}", "/projects/#{project.id}" %></h2>
+	<p class="project-description"><%= project.description %></p>
+	<p class="project-title"><%= project.funding_goal %></p>
+	<p class="project-title"><%= project.time_left %> left!</p>
+	<div class="progress">
+   <div class="progress-bar" role="progressbar" aria-valuenow="<%= project.percentage_funded %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= project.percentage_funded %>%">
+      <%= project.percentage_funded %>
+    </div>
+   </div>
+</div>

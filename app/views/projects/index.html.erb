@@ -1,13 +1,3 @@
 <div class="projects">
-	<% @projects.each do |project| %>
-		<div class="project">
-			<%= image_tag project.project_image_url(:tiny), class: "project-img" if project.project_image %><br/>
-			<h2> <%= link_to "#{project.name}", "/projects/#{project.id}" %> </h2>
-			 <p> Description </p>
-			 <p class="project-description"> <%= project.description %> </p>
-			 <p> Funding Goal </p>
-			 <p class="project-title"> $ <%= project.funding_goal %> </p>
-			 <p class="project-title"> <%= project.time_left %> left!</p>
-		</div>
-	<% end %>
+	<%= render @projects %>
 </div>
