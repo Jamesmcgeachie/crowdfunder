@@ -6,7 +6,7 @@
 	<p class="project-title"><%= project.time_left %> left!</p>
 	<div class="progress">
    <div class="progress-bar" role="progressbar" aria-valuenow="<%= project.percentage_funded %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= project.percentage_funded %>%">
-      <%= project.percentage_funded %>
+      <p> <%= project.percentage_funded %> % </p>
     </div>
    </div>
 </div>
